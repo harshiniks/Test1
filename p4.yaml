@@ -1,0 +1,8 @@
+
+jobs:
+ - deployment: deploy
+   displayName: somedeploy
+   pool:
+    name: default
+   environment: environment1
+ 
