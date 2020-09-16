@@ -6,7 +6,6 @@ resources:
  pipelines:
    - pipeline: p1
      source: Arsasana.Test1
-     version: 20200916.1
      trigger: true
 
 
