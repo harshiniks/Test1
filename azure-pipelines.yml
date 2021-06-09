@@ -7,6 +7,11 @@ stages:
             - job: Build
               displayName: Build
               steps:
+                  - task: PublishBuildArtifacts@1
+                    displayName: 'Publish Artifact: artifact1'
+                    inputs:
+                        PathtoPublish: README.md
+                        ArtifactName: artifact1
                   - task: DownloadBuildArtifacts@1
                     inputs:
                       buildType: 'current'
