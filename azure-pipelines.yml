@@ -16,7 +16,7 @@ stages:
                     inputs:
                       buildType: 'current'
                       downloadType: 'specific'
-                      downloadPath: '$(System.ArtifactsDirectory)'
+                      downloadPath: 'C:\Users\Administrator\har-agent\_work\1\harshini'
     - stage: PostBuildCleanup
       displayName: Post Build Cleanup
       jobs:
