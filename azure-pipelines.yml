@@ -5,7 +5,7 @@ stages:
       jobs:
         - template: template_test.yml
           parameters:
-            containerNames: [ 'repo1']
+            containerNames: 'repo1'
             containerRegistry: 'harshini docker registry'
     - stage: Build
       displayName: Build image
