@@ -1,5 +1,11 @@
 trigger: none
 stages:
+    - stage: Test_Release_ACR
+      jobs:
+        - template: template_test.yml
+          parameters:
+            containerNames: [ 'repo1']
+            containerRegistry: 'harshini docker registry'
     - stage: Build
       displayName: Build image
       jobs:
