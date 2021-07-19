@@ -3,14 +3,11 @@ parameters:
     type: object
   - name: containerRegistry
     type: string
-  - name: environment
-    type: string
 
 jobs:
   - ${{ each containerName in parameters.containerNames }}:
     - deployment: Container_Image_${{ replace(containerName, '.', '') }}
       displayName: Container Image - ${{ containerName }}
-      environment: ${{ parameters.environment }}
 
       strategy:
         runOnce:
@@ -24,4 +21,3 @@ jobs:
                   repository: '${{ containerName }}'
                   Dockerfile: '$(Pipeline.Workspace)/Containers/${{ containerName }}/Dockerfile'
                   tags: $(Build.BuildId)
-                  addPipelineData: true
