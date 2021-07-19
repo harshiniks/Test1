@@ -1,5 +1,4 @@
 trigger: none
-pool: harks
 stages:
     - stage: Build
       displayName: Build image
