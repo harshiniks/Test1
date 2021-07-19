@@ -8,6 +8,7 @@ jobs:
   - ${{ each containerName in parameters.containerNames }}:
     - deployment: Container_Image_${{ replace(containerName, '.', '') }}
       displayName: Container Image - ${{ containerName }}
+      environment: 'dev'
 
       strategy:
         runOnce:
