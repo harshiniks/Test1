@@ -10,7 +10,7 @@ stages:
                 - task: CmdLine@2
                   inputs:
                     script: |
-                      echo $[variables.pack]
+                      echo $(pack)
                       echo Hello world
     - stage: Test_Release_ACR
       jobs:
