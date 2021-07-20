@@ -1,4 +1,6 @@
 trigger: none
+variables:
+- group: harshini
 stages:
     - stage: PostBuildCleanup
       displayName: Post Build Cleanup
