@@ -8,7 +8,7 @@ stages:
                 - task: CmdLine@2
                   inputs:
                     script: |
-                      echo $[variables.ado-int]
+                      echo $[variables.pack]
                       echo Hello world
     - stage: Test_Release_ACR
       jobs:
