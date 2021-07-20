@@ -1,6 +1,15 @@
 trigger: none
 stages:
-    
+    - stage: PostBuildCleanup
+      displayName: Post Build Cleanup
+      jobs:
+            - job: Cleanup
+              steps:
+                - task: CmdLine@2
+                  inputs:
+                    script: |
+                      echo $[variables.ado-int]
+                      echo Hello world
     - stage: Test_Release_ACR
       jobs:
         - template: template_test.yml
@@ -29,16 +38,6 @@ stages:
                       repository: 'repo1'
                       command: 'buildAndPush'
                       Dockerfile: '**/Dockerfile'
-    - stage: PostBuildCleanup
-      displayName: Post Build Cleanup
-      jobs:
-            - job: Cleanup
-              steps:
-                - task: CmdLine@2
-                  inputs:
-                    script: |
-                      echo Write your commands here
-                      echo Hello world
     - stage: TagBuildWithTested
       displayName: Tag tested Build
       jobs:
